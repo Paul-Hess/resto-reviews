@@ -1,18 +1,20 @@
 import { Component } from 'angular2/core';
 import { Restaurant } from './restaurant.model';
+import { RestaurantListComponent } from './restaurant-list.component';
 import { Review } from './review.model';
 
 @Component ({
   selector: 'my-app',
+  directives: [RestaurantListComponent],
   template: `
     <div class="container">
-
+      <restaurant-list [rList]="restaurants"></restaurant-list>
     </div>
   `
 })
 
 export class AppComponent {
-  restaurants: Restaurant[];
+  restaurants: Restaurant[] = [];
   constructor(){
     this.restaurants.push(
       new Restaurant('Name0', 'cuisine0', 'address0', '$'),
