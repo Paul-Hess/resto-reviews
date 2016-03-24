@@ -7,6 +7,7 @@ import {Review } from './review.model';
   selector: 'edit-resto',
   inputs: ['currentResto'],
   template: `
+  <h2> Edit Record </h2>
     <form class="editor">
       <label>Name</label>
       <input type="text" [(ngModel)]="currentResto.name">

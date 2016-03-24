@@ -7,6 +7,7 @@ import { Review } from './review.model';
   selector: 'my-app',
   directives: [RestaurantListComponent],
   template: `
+    <h1> Yelp Schmelp </h1>
     <div class="container">
       <restaurant-list [rList]="restaurants"></restaurant-list>
     </div>

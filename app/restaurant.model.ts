@@ -7,10 +7,12 @@ export class Restaurant {
   constructor(public name: string, public cuisine: string, public address: string, public pricePoint: string) {
     var rNumber: number = Math.floor(Math.random() * 10);
     for(var i = 0; i< rNumber; i++){
-      this.addReview(new Review('user', i, 'text', i));
+      this.addReview(new Review('user', i, i));
     }
+    if(this.reviews.length > 1){
     this.calcRating();
     this.calcWait();
+  }
   }
 
   addReview(review: Review) {
@@ -22,6 +24,7 @@ export class Restaurant {
     for(var review of this.reviews){
       total += review.rating;
     }
+    
     this.avgRating = total/this.reviews.length;
   }
 

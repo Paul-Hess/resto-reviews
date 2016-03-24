@@ -1,5 +1,5 @@
 
 
 export class Review {
-    constructor(public userName: string, public rating: number, public text: string, public wait: number) {}
+    constructor(public userName: string, public rating: number, public wait: number) {}
 }
