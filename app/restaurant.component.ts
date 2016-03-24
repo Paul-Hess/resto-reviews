@@ -1,4 +1,4 @@
-import { Component } from 'angular2/core';
+import { Component, EventEmitter } from 'angular2/core';
 import { Restaurant } from './restaurant.model';
 import { Review } from './review.model';
 import { ReviewListComponent } from './review-list.component';
@@ -9,8 +9,10 @@ import { CreateReviewComponent } from './create-review.component';
   selector: 'restaurant',
   directives: [ReviewListComponent, EditRestaurantComponent, CreateReviewComponent],
   inputs: ['currentResto'],
+  outputs: ['deleteResto'],
   template: `
-  <h1 (click)="changeSelection('info')">{{currentResto.name}}</h1>
+
+  <h1 (click)="changeSelection('info')">{{currentResto.name}} <span (click)="removeResto(currentResto)">X</span></h1>
       <div class="restaurant-item" *ngIf="infoSelected">
 
          <p> <span>Address:</span> {{ currentResto.address }} </p>
@@ -34,6 +36,10 @@ export class RestaurantComponent {
   infoSelected: boolean = false;
   editSelected: boolean = false;
   reviewsSelected: boolean = false;
+  deleteResto: EventEmitter<Restaurant>;
+  constructor() {
+    this.deleteResto = new EventEmitter();
+    }
   changeSelection(category?: string) {
     category? (category === 'info'? this.infoSelected = !this.infoSelected : this.reviewsSelected = !this.reviewsSelected): this.editSelected = !this.editSelected;
     if(!this.infoSelected){
@@ -44,5 +50,9 @@ export class RestaurantComponent {
 
   change(field: boolean){
     field = !field
+  }
+
+  removeResto(resto: Restaurant) {
+    this.deleteResto.emit(resto);
   }
 }
