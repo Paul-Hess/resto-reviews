@@ -8,9 +8,7 @@ import { Review } from './review.model';
   directives: [ReviewComponent],
   inputs: ['reviewList'],
   template: `
-  <div *ngFor="#review of reviewList">
-    <review [currentReview]="review"></review>
-  </div>
+    <review class="review-item" *ngFor="#review of reviewList" [currentReview]="review"></review>
   `
 })
 

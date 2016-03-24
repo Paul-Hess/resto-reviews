@@ -17,13 +17,13 @@ export class AppComponent {
   restaurants: Restaurant[] = [];
   constructor(){
     this.restaurants.push(
-      new Restaurant('Name0', 'cuisine0', 'address0', '$'),
-      new Restaurant('Name1', 'cuisine0', 'address1', '$$'),
-      new Restaurant('Name2', 'cuisine1', 'address2', '$'),
-      new Restaurant('Name3', 'cuisine3', 'address3', '$$'),
-      new Restaurant('Name4', 'cuisine4', 'address4', '$$$'),
-      new Restaurant('Name5', 'cuisine4', 'address5', '$'),
-      new Restaurant('Name6', 'cuisine2', 'address6', '$$$')
+      new Restaurant('Restaurant0', 'cuisine0', 'address0', '$'),
+      new Restaurant('Restaurant1', 'cuisine0', 'address1', '$$'),
+      new Restaurant('Restaurant2', 'cuisine1', 'address2', '$'),
+      new Restaurant('Restaurant3', 'cuisine3', 'address3', '$$'),
+      new Restaurant('Restaurant4', 'cuisine4', 'address4', '$$$'),
+      new Restaurant('Restaurant5', 'cuisine4', 'address5', '$'),
+      new Restaurant('Restaurant6', 'cuisine2', 'address6', '$$$')
     )
   }
 }

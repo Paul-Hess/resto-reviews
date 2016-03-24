@@ -6,11 +6,10 @@ import { Review } from './review.model';
   selector: 'review',
   inputs: ['currentReview'],
   template: `
-  <div>
-  {{currentReview.name}}
-  {{currentReview.rating}}
-  {{currentReview.text}}
-  </div>
+    <p> User: {{currentReview.userName}} </p>
+    <p> Rating: {{currentReview.rating}} </p>
+    <p> Review: {{currentReview.text}} </p>
+    <p> Wait time: {{currentReview.wait}} </p>
   `
 })
 
